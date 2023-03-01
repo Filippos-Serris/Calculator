@@ -49,8 +49,10 @@ class CalculatorFragment : Fragment() {
             dotButton.setOnClickListener { printToTextView(getString(R.string.dot)) }
 
             equalButton.setOnClickListener {
-                historyText.text = calculationsText.text
-                calculationsText.text = viewModel.calculate(calculationsText.text.toString())
+                if (calculationsText.text.isNotEmpty() && !containLetter(calculationsText.text.toString())) {
+                    historyText.text = calculationsText.text
+                    calculationsText.text = viewModel.calculate(calculationsText.text.toString())
+                }
             }
             clearButton.setOnClickListener { calculationsText.text = null }
             allClearButton.setOnClickListener {
@@ -125,6 +127,15 @@ class CalculatorFragment : Fragment() {
             }
         }
         binding.calculationsText.text = newText
+    }
+
+    private fun containLetter(string: String):Boolean {
+        for (char in string) {
+            if (char !in 'A'..'Z' && char !in 'a'..'z') {
+                return false
+            }
+        }
+        return true
     }
 }
 
