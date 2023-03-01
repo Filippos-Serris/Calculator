@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    android:label="Currency Converter"
+    app:startDestination="@id/calculatorFragment">
+
+    <fragment
+        android:id="@+id/calculatorFragment"
+        android:name="com.example.calculator.ui.CalculatorFragment"
+        android:label="Calculator"
+        tools:layout="@layout/fragment_calculator">
+        <action
+            android:id="@+id/action_calculatorFragment_to_currencyConverterFragment"
+            app:destination="@id/currencyConverterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/currencyConverterFragment"
+        android:name="com.example.calculator.ui.CurrencyConverterFragment"
+        android:label="Currency converter"
+        tools:layout="@layout/fragment_currency_converter">
+        <action
+            android:id="@+id/action_currencyConverterFragment_to_calculatorFragment"
+            app:destination="@id/calculatorFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,48 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Calculator buttons -->
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="division">/</string>
+    <string name="multiplication">*</string>
+    <string name="equal">=</string>
+
+    <string name="dot">.</string>
+    <string name="clear">C</string>
+    <string name="all_clear">AC</string>
+    <string name="delete">DEL</string>
+
+    <string name="currency_converter">Currency converter</string>
+
+    <!-- Toast messages -->
+    <string name="division_by_zero">You can\'t divide by 0. Enter a valid expression.</string>
+    <string name="consecutive_operators">Calculator can\'t handle consecutive operators.Enter a valid expression.</string>
+
+    <string-array name="currency_list">
+        <item>BTC</item>
+        <item>EUR</item>
+        <item>KRW</item>
+        <item>RUB</item>
+        <item>USD</item>
+    </string-array>
+
+    <string name="from">From</string>
+    <string name="to">To</string>
+    <string name="convert">convert</string>
+
+
+</resources>
