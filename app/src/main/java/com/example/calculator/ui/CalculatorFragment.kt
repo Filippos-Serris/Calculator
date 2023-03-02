@@ -49,7 +49,10 @@ class CalculatorFragment : Fragment() {
             dotButton.setOnClickListener { printToTextView(getString(R.string.dot)) }
 
             equalButton.setOnClickListener {
-                if (calculationsText.text.isNotEmpty() && !containLetter(calculationsText.text.toString())) {
+                if (calculationsText.text.isNotEmpty() && !containLetter(calculationsText.text.toString()) && lastCharIsDigit(
+                        calculationsText.text.toString()
+                    )
+                ) {
                     historyText.text = calculationsText.text
                     calculationsText.text = viewModel.calculate(calculationsText.text.toString())
                 }
@@ -129,13 +132,26 @@ class CalculatorFragment : Fragment() {
         binding.calculationsText.text = newText
     }
 
-    private fun containLetter(string: String):Boolean {
+    private fun containLetter(string: String): Boolean {
         for (char in string) {
             if (char !in 'A'..'Z' && char !in 'a'..'z') {
                 return false
             }
         }
         return true
+    }
+
+    private fun lastCharIsDigit(string: String): Boolean {
+        if (string.last().toString() == getString(R.string.plus) ||
+            string.last().toString() == getString(R.string.minus) ||
+            string.last().toString() == getString(R.string.multiplication) ||
+            string.last().toString() == getString(R.string.division) ||
+            string.last().toString() == getString(R.string.dot)
+        ){
+            Toast.makeText(context,getString(R.string.last_char),Toast.LENGTH_SHORT).show()
+            return  false
+        }else
+            return true
     }
 }
 

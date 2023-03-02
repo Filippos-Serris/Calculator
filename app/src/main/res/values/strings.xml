@@ -31,6 +31,7 @@
     <!-- Toast messages -->
     <string name="division_by_zero">You can\'t divide by 0. Enter a valid expression.</string>
     <string name="consecutive_operators">Calculator can\'t handle consecutive operators.Enter a valid expression.</string>
+    <string name="last_char">Last character in expression must be a digit. Enter a valid expression.</string>
 
     <string-array name="currency_list">
         <item>BTC</item>
